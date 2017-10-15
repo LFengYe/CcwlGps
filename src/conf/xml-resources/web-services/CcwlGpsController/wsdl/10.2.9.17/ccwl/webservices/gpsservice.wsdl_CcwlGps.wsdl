@@ -1,0 +1,83 @@
+<?xml version="1.0" ?><wsdl:definitions name="CcwlGps" targetNamespace="http://webservice.ccwl.com/" xmlns:ns1="http://webservice.ccwl.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://webservice.ccwl.com/" xmlns:ns1="http://control.webservice.ccwl.com/" xmlns:tns="http://webservice.ccwl.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://control.webservice.ccwl.com/"></xs:import>
+  <xs:element name="addGpsImpl" type="tns:addGpsImpl"></xs:element>
+  <xs:element name="addGpsImplResponse" type="tns:addGpsImplResponse"></xs:element>
+  <xs:element name="addGpssImpl" type="tns:addGpssImpl"></xs:element>
+  <xs:element name="addGpssImplResponse" type="tns:addGpssImplResponse"></xs:element>
+  <xs:complexType name="addGpsImpl">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns1:supplierno"></xs:element>
+      <xs:element minOccurs="0" ref="ns1:pwd"></xs:element>
+      <xs:element minOccurs="0" ref="ns1:carno"></xs:element>
+      <xs:element minOccurs="0" ref="ns1:gpsno"></xs:element>
+      <xs:element minOccurs="0" ref="ns1:longitude"></xs:element>
+      <xs:element minOccurs="0" ref="ns1:latitude"></xs:element>
+      <xs:element minOccurs="0" ref="ns1:stime"></xs:element>
+      <xs:element minOccurs="0" ref="ns1:address"></xs:element>
+      <xs:element minOccurs="0" ref="ns1:speed"></xs:element>
+      <xs:element minOccurs="0" ref="ns1:direction"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addGpsImplResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addGpssImpl">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns1:gpslist"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addGpssImplResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+<xs:schema targetNamespace="http://control.webservice.ccwl.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="address" type="xs:string"></xs:element>
+<xs:element name="carno" type="xs:string"></xs:element>
+<xs:element name="direction" type="xs:string"></xs:element>
+<xs:element name="gpslist" type="xs:string"></xs:element>
+<xs:element name="gpsno" type="xs:string"></xs:element>
+<xs:element name="latitude" type="xs:string"></xs:element>
+<xs:element name="longitude" type="xs:string"></xs:element>
+<xs:element name="pwd" type="xs:string"></xs:element>
+<xs:element name="speed" type="xs:string"></xs:element>
+<xs:element name="stime" type="xs:string"></xs:element>
+<xs:element name="supplierno" type="xs:string"></xs:element>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addGpssImplResponse">
+    <wsdl:part element="ns1:addGpssImplResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addGpssImpl">
+    <wsdl:part element="ns1:addGpssImpl" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addGpsImplResponse">
+    <wsdl:part element="ns1:addGpsImplResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addGpsImpl">
+    <wsdl:part element="ns1:addGpsImpl" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CcwlGps">
+    <wsdl:operation name="addGpsImpl">
+      <wsdl:input message="ns1:addGpsImpl" name="addGpsImpl">
+    </wsdl:input>
+      <wsdl:output message="ns1:addGpsImplResponse" name="addGpsImplResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addGpssImpl">
+      <wsdl:input message="ns1:addGpssImpl" name="addGpssImpl">
+    </wsdl:input>
+      <wsdl:output message="ns1:addGpssImplResponse" name="addGpssImplResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
