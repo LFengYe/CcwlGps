@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://10.2.9.17/ccwl/webservices/gpsservice?wsdl" uri="src/conf/xml-resources/web-services/CcwlGpsController/wsdl/10.2.9.17/ccwl/webservices/gpsservice.wsdl"/>
     <system systemId="http://10.2.9.17/ccwl/webservices/gpsservice?wsdl=CcwlGps.wsdl" uri="src/conf/xml-resources/web-services/CcwlGpsController/wsdl/10.2.9.17/ccwl/webservices/gpsservice.wsdl_CcwlGps.wsdl"/>
+    <system systemId="http://61.183.200.37:8099/ccwl/webservices/gpsservice?wsdl" uri="src/conf/xml-resources/web-services/CcwlGpsController/wsdl/61.183.200.37_8099/ccwl/webservices/gpsservice.wsdl"/>
+    <system systemId="http://61.183.200.37:8099/ccwl/webservices/gpsservice?wsdl=CcwlGps.wsdl" uri="src/conf/xml-resources/web-services/CcwlGpsController/wsdl/61.183.200.37_8099/ccwl/webservices/gpsservice.wsdl_CcwlGps.wsdl"/>
 </catalog>

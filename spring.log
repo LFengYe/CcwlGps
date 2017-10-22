@@ -1,0 +1,16 @@
+18:01:30,534 ERROR [com.cn.util.DatabaseOpt] SQL错误
+com.microsoft.sqlserver.jdbc.SQLServerException: 通过端口 1433 连接到主机 139.224.65.40 的 TCP/IP 连接失败。错误:“连接超时: 无其他信息。请验证连接属性。确保 SQL Server 的实例正在主机上运行，且在此端口接受 TCP/IP 连接，还要确保防火墙没有阻止到此端口的 TCP 连接。”。
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:191)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.ConvertConnectExceptionToSQLServerException(SQLServerException.java:242)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2369)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:551)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:1963)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:1628)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:1459)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:773)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1168)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.cn.util.DatabaseOpt.getConnect(DatabaseOpt.java:36)
+	at com.cn.task.UploadGPSData.run(UploadGPSData.java:33)
+	at java.lang.Thread.run(Thread.java:745)
