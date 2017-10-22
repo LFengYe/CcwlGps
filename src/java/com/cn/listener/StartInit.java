@@ -45,7 +45,7 @@ public class StartInit implements ServletContextListener {
     public void contextDestroyed(ServletContextEvent sce) {
         LOG.info("定时任务结束");
         if (future != null) {
-            future.cancel(false);
+            future.cancel(true);
         }
     }
 
