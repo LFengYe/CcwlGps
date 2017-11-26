@@ -83,6 +83,27 @@ public class Units {
             return "经纬度点大于1000个";
         }
     }
+    
+    /**
+     * 解析经纬度为地理地址
+     * @param coordtype 坐标的类型，目前支持的坐标类型包括：bd09ll（百度经纬度坐标）、bd09mc（百度米制坐标）、gcj02ll（国测局经纬度坐标）、wgs84ll（ GPS经纬度）
+     * @param location lat(纬度),lng(经度)
+     * @return 
+     */
+    public static String getAddress(String coordtype, String location) {
+        String httpUrl = "http://api.map.baidu.com/geocoder/v2/";
+        String httpArg = "coordtype=" + coordtype + "&location=" + location;
+        httpArg += "&ak=" + BAIDU_CONVERT_KEY + "&output=json";
+        httpArg += "&extensions_road=false&extensions_town=true&latest_admin=1";
+        String result = requestWithNoHeaderKey(httpUrl, httpArg);
+        JSONObject obj = JSONObject.parseObject(result);
+        if (obj.getIntValue("status") == 0) {
+            AddressResult addressResult = obj.getObject("result", AddressResult.class);
+            return addressResult.getFormatted_address();
+        } else {
+            return obj.getString("message");
+        }
+    }
 
     /**
      * 根据身份证号获取身份信息

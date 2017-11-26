@@ -26,16 +26,16 @@ public class StartInit implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         try {
-            //30秒执行一次
-            ScheduledExecutorService timeOutScheduler = Executors.newSingleThreadScheduledExecutor();
-            future = timeOutScheduler.scheduleAtFixedRate(new UploadGPSData(), 0, 30, TimeUnit.SECONDS);
-            LOG.info("启动定时任务成功!");
             /*
             //向定时任务线程池提交一个固定时间间隔执行的任务
             public ScheduledFuture<?> scheduleAtFixedRate(Runnable command, long initialDelay, long period, TimeUnit unit);
             //向定时任务线程池提交一个固定延时间隔执行的任务
             public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command, long initialDelay, long delay, TimeUnit unit);
              */
+            //30秒执行一次
+            ScheduledExecutorService timeOutScheduler = Executors.newSingleThreadScheduledExecutor();
+            future = timeOutScheduler.scheduleAtFixedRate(new UploadGPSData(), 0, 30, TimeUnit.SECONDS);
+            LOG.info("启动定时任务成功!");
         } catch (Exception ex) {
             LOG.error("启动定时任务失败!", ex);
         }
